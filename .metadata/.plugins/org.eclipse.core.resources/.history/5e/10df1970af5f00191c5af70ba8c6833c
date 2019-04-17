@@ -1,0 +1,11 @@
+package com.well.kept.data;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.well.kept.Teacher;
+
+public interface UserRepository extends CrudRepository<Teacher, Long> {
+	
+	Teacher findByUsername(String username);
+
+}

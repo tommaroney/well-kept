@@ -1,0 +1,8 @@
+package com.well.kept.data;
+
+import org.springframework.boot.autoconfigure.batch.BatchProperties.Job;
+import org.springframework.data.repository.CrudRepository;
+
+public interface JobRepository extends CrudRepository<Job, String> {
+
+}

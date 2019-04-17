@@ -1,0 +1,11 @@
+document.addEventListener("DOMContentLoaded", () => {
+	console.log("here")
+	var elems = document.querySelectorAll(".modal");
+	var instances = M.Modal.init(elems, 
+			{
+				preventScrolling: true,
+				dismissibl: false,
+			});
+	
+});
+

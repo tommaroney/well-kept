@@ -1,0 +1,5 @@
+package com.well.kept.web;
+
+public class DashboardController {
+
+}

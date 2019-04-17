@@ -1,0 +1,6 @@
+INDEX VERSION 1.4+C:\Users\tomma\Spring Practice\well-kept\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+300596496.index
+359870522.index
+3546427707.index
+3722650631.index
+2660687573.index

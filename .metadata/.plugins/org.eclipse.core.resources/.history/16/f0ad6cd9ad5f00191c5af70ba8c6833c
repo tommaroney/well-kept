@@ -1,0 +1,7 @@
+package com.well.kept.data;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface Job extends CrudRepository<Job, String> {
+
+}

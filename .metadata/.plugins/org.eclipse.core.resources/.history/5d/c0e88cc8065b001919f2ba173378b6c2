@@ -1,0 +1,5 @@
+package com.well.kept.security;
+
+public class SecurityConfig {
+
+}

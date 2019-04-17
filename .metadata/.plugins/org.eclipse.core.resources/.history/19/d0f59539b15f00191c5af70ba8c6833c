@@ -1,0 +1,7 @@
+package com.well.kept;
+
+public class Job {
+	
+	private String name;
+	private int numberOfStudents;
+}

@@ -1,0 +1,11 @@
+package com.well.kept.data;
+
+import java.util.List;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.well.kept.Classroom;
+
+public interface ClassroomRepository extends CrudRepository<Classroom, Long> {
+
+}

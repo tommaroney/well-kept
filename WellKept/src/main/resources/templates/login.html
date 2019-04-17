@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+	<head>
+		 <!-- Compiled and minified CSS -->
+    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    	<!-- Compiled and minified JavaScript -->
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+		<title>Well Kept</title>
+	</head>
+	
+	<body>
+		<section class="container">
+			<h1>Login</h1>
+			<img src="" alt="logo">
+		</section>
+		
+		<div th:if="${error}">
+			Unable to login.  Check your username and password.
+		</div>
+		
+		<p><a th:href="@{/register}" class="btn-flat">Click here to register</a></p>
+		
+		<!-- tag::thAction[] -->
+		<form method="POST" th:action="@{/login}" id="loginForm">
+		<!-- end::thAction[] -->
+			<label for="username">Username: </label>
+			<input type="text" name="username" id="username" /><br/>
+			
+			<label for="password">Password: </label>
+			<input type="password" name="password" id=password" /><br/>
+			
+			<input type="submit" value="Login"/>
+		
+		</form>
+
+	</body>
+  </html>

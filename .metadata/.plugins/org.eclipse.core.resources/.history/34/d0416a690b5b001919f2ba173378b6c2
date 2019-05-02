@@ -1,7 +1,0 @@
-
-spring:
-	datasource:
-		port: 3306
-		url: jdbc:mysql://localhost:3306/wellkept_db
-		username: root
-		password: root

@@ -25,13 +25,13 @@
 		<section class="container">
 			<div class="row">
 				<div class="col s12 l6">
-					<h1>Your Classrooms</h1>
+					<h1 th:text="${title}">title</h1>
 					<hr/>
-					<div th:if="${classrooms != null}">
+<!--					<div th:if="${classrooms != null}">
 						<div th:each="${classrooms}">
 							<h2 th:text="${name}">Hello</h2>
 						</div>
-					</div>
+					</div> !-->
 				</div>
 			</div>
 			<div class="row">
@@ -40,18 +40,18 @@
 		</section>
 		
 		<div id="newClassroom" class="modal">
-			<div class="modal-content">
-				<form method="POST" th:object="${newClassroom}">
-					<div class="input-field">
-						<label for="classroomName">Classroom Name</label>
-						<input type="text" class="validate" id="classroomName" th:field="*{name}">
-					</div>
-				</form>
-			</div>
-			<div class="modal-footer">
-				<a href="#!" class="modal-close waves-effect btn-flat">Cancel</a>
-				<a href="#!" id="addClass" class="modal-close waves-effect btn-flat">Add</a>
-			</div>
+			<form method="POST" th:object="${newClassroom}" th:action="@{/dashboard}">
+				<div class="modal-content">
+						<div class="input-field">
+							<label for="classroomName">Classroom Name</label>
+							<input type="text" class="validate" id="classroomName" th:field="*{name}">
+						</div>
+				</div>
+				<div class="modal-footer">
+					<a class="modal-close waves-effect btn-flat">Cancel</a>
+					<input type="submit" value="add" class="modal-close waves-effect btn-flat" />
+				</div>
+			</form>
 		</div>
 		
 		<script src="/js/app.js" type="text/javascript"></script>

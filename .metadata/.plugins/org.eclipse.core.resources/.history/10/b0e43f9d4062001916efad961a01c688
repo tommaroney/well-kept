@@ -1,0 +1,50 @@
+package com.well.kept.web;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
+
+import com.well.kept.Classroom;
+import com.well.kept.Student;
+import com.well.kept.User;
+import com.well.kept.data.ClassroomRepository;
+import com.well.kept.data.StudentRepository;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@Controller
+@RequestMapping("dashboard/classroom")
+@SessionAttributes("classroom")
+public class ClassroomController {
+
+	private final ClassroomRepository classRepo;
+	private final StudentRepository studentRepo;
+	
+	@Autowired
+	public ClassroomController(ClassroomRepository classRepo, StudentRepository studentRepo) {
+		this.studentRepo = studentRepo;
+		this.classRepo = classRepo;
+	}
+	
+	@GetMapping("/{id}")
+	public String showStudents(Model model, @AuthenticationPrincipal User user, 
+							   @PathVariable("id") Long id) {
+		
+		Classroom classroom = classRepo.findById(id).get();
+		log.info("User looks like: " + user);
+		
+		model.addAttribute("classroom", classroom);
+		model.addAttribute("newStudent", new Student());
+		model.addAttribute("title", classroom.getName());
+		
+		return "dashboard";
+	}
+}

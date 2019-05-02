@@ -1,7 +1,0 @@
-
-spring:
-	datasource:
-		port: 3306
-		url: jdbc:mysql://localhost/tacocloud
-		username: "root"
-		password: "root"

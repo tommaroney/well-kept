@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -36,7 +37,7 @@ public class User implements UserDetails {
 	private final String lastName;
 	private final String email;
 	
-	@ManyToMany(targetEntity=Classroom.class)
+	@ManyToMany(targetEntity=Classroom.class, fetch=FetchType.EAGER)
 	private List<Classroom> classrooms;
 	
 	@Override
@@ -62,5 +63,9 @@ public class User implements UserDetails {
 	@Override
 	public boolean isEnabled() {
 		return true;
+	}
+	
+	public void addClassroom(Classroom classroom) {
+		this.classrooms.add(classroom);
 	}
 }

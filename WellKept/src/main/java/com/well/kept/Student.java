@@ -9,15 +9,20 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 @Data
 @Entity
+@NoArgsConstructor(access=AccessLevel.PRIVATE, force=true)
+@RequiredArgsConstructor
 public class Student {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long Id;
+	private final Long Id;
 	
 	private String name;
 	

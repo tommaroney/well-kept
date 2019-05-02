@@ -6,7 +6,7 @@ spring:
     initialization-mode: always
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: create
   data:
     jpa:
       repositories:
